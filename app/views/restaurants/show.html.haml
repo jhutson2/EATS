@@ -1,0 +1,26 @@
+.page-header
+  = link_to restaurants_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_restaurant_path(@restaurant), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show restaurant
+
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @restaurant.name
+  %dt Address:
+  %dd= @restaurant.address
+  %dt Phone:
+  %dd= @restaurant.phone
+  %dt Website:
+  %dd= @restaurant.website
+  %dt Hours:
+  %dd= @restaurant.hours
+  %dt Price:
+  %dd= price_as_dollar_signs(@restaurant.price)
+  %dt Cuisine:
+  %dd= @restaurant.cuisine
+  %dt Menu:
+  %dd= @restaurant.menu_id
