@@ -14,5 +14,7 @@ class Restaurant < ApplicationRecord
   validates :name, presence: true
   validates :phone, presence: true
 
+  attachment :menu
+
   has_many :pictures
 end

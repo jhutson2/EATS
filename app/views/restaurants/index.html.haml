@@ -19,6 +19,7 @@
           %th Price
           %th Cuisine
           %th Menu
+          %th Images
           %th{colspan: 3}
 
       %tbody
@@ -29,15 +30,18 @@
             %td= restaurant.phone
             %td= restaurant.website
             %td= restaurant.hours
-            %td= restaurant.price
+            %td= price_as_dollar_signs(restaurant.price)
             %td= restaurant.cuisine
             %td= restaurant.menu_id
             %td
+              - restaurant.pictures.each do |picture|
+                = image_tag attachment_url(picture, :image), size: "200x200"
+            %td
               = link_to restaurant do
-                %span.glyphicon.glyphicon-ok
+                Show
             %td
               = link_to edit_restaurant_path(restaurant) do
-                %span.glyphicon.glyphicon-pencil
+                Edit
             %td
               = link_to restaurant, data: { confirm: 'Are you sure?' }, method: :delete do
-                %span.glyphicon.glyphicon-remove
+                Delete

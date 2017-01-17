@@ -1,4 +1,4 @@
 class Picture < ApplicationRecord
   belongs_to :restaurant
-  attatchment :image
+  attachment :image
 end

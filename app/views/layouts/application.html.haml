@@ -36,6 +36,7 @@
             = form_tag(restaurants_path, method: "Get", class: "navbar-form navbar-right") do
               .form-group
                 = select_tag :cuisine, options_for_select(Restaurant::CUISINES, params[:cuisine]), class: 'form-control'
+              = button_tag "Search", class: "btn btn-default"
           %ul.nav.navbar-nav.navbar-right
             %li
               - if logged_in?

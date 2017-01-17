@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
 
   def index
     if params[:cuisine].present?
-      @restaurant = Restaurant.where(cuisine: params[:cuisine])
+      @restaurants = Restaurant.where(cuisine: params[:cuisine])
     else
       @restaurants = Restaurant.all
     end

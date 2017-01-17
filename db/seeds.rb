@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+bobs_burger = Restaurant.create!(name: "Bob's Burger", address:"123 sesame street", phone: "2222222", hours: "24")
+
+picture = Picture.create!(restaurant: bobs_burger,
+                          image: File.open(Rails.root.join("db/seeds/burger1.jpeg")))
